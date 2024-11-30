@@ -1,3 +1,9 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
 .content-wrapper {
   display: flex;
   flex-direction: column;
@@ -5,18 +11,48 @@
   align-items: center;
   height: 100vh;
   margin: 0;
+  position: relative;
+  padding: -10px;
+}
+
+.start-button {
+  background-color: transparent;
+  border: solid 2px #aa30aa;
+  color: rgb(243, 243, 243);
+  padding: 1rem 2rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1.2rem;
+  margin: 1rem;
+  cursor: pointer;
+  border-radius: 10px;
 }
 
 .text-wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   margin: 0;
+  background: linear-gradient(120deg, #b211c7, #641f8b, #284672, #3c6da5);
+  position: absolute;
+  bottom: -200px;
+  width: 100%;
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  padding: 1rem;
+  background-size: 300% 300%;
+  animation: gradientAnimation 5s ease infinite;
 }
+
 
 .text-content {
   font-size: 1.2rem;
   margin: 1rem;
+  overflow-y: auto;
   width: 50%;
+}
+
+@keyframes gradientAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
