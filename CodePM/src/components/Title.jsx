@@ -6,7 +6,7 @@ import './css-components/Title.css'
 const Animation = {
   initial: { opacity: 0, y: 0 },
   animate: { opacity: 1, y: -20 },
-  transition: { duration: 1.4 }
+  transition: { duration: 0.8 }
 }
 
 export default function Title() {
@@ -19,7 +19,7 @@ export default function Title() {
     >
         <div className='title-container'>
           <img src={title} alt="Title" className="title-image"/>
-          <Sun timer={1600}/>
+          <Sun timer={1100}/>
         </div>
     </motion.div>
   )
