@@ -1,0 +1,26 @@
+import { motion } from "framer-motion"
+import Sun from './Sun'
+import title from '../assets/title.png'
+import './css-components/Title.css'
+
+const Animation = {
+  initial: { opacity: 0, y: 0 },
+  animate: { opacity: 1, y: -20 },
+  transition: { duration: 1.4 }
+}
+
+export default function Title() {
+  return (
+    <motion.div
+      initial="initial"
+      animate="animate"
+      transition={Animation.transition}
+      variants={Animation}
+    >
+        <div className='title-container'>
+          <img src={title} alt="Title" className="title-image"/>
+          <Sun timer={1600}/>
+        </div>
+    </motion.div>
+  )
+}
