@@ -1,6 +1,6 @@
 import React from 'react'
 import './css-components/Content.css'
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect } from 'react';
 
 // Assets //
@@ -13,6 +13,7 @@ import Dart from '../assets/Dart.png'
 
 function Content() {
   const [showContent, setShowContent] = useState(false);
+  const [showWord, setShowWord] = useState('');
 
   const Animation = {
     initial: { opacity: 0, y: 0 },
@@ -26,19 +27,45 @@ function Content() {
     transition: { duration: 1.2 }
   }
 
+  const wordVariants = {
+    initial: { opacity: 0, y: 20 },
+    animate: { opacity: 1, y: 0 },
+    exit: { opacity: 0, y: -20 },
+  };
+
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowContent(true);
-    }, 3500);
+    }, 4350);
 
     return () => clearTimeout(timer);
-  }, [3500]);
+  }, []);
+
+  useEffect(() => {
+    const wordTimer = setInterval(() => {
+      const wordsArray = ['skills', 'speed', 'accuracy', 'efficiency', 'productivity'];
+      const randomWord = wordsArray[Math.floor(Math.random() * wordsArray.length)];
+      setShowWord(randomWord);
+    }, 2500);
+
+    return () => clearInterval(wordTimer);
+  }, []);
+
+
 
   return (
     showContent ?
     <>
     <motion.div className='content-wrapper' initial="initial" animate="animate" transition={Animation.transition} variants={Animation}>
-      <h2>Improve your Code <span className='highlight'>speed</span> with CodePM! </h2>
+    <h2>
+          Improve your code{' '}
+          <AnimatePresence mode="wait">
+            {}
+            <motion.span key={showWord} variants={wordVariants} initial="initial" animate="animate" exit="exit" transition={{ duration: 0.5 }} style={{ display: 'inline-block' }}
+            >
+              {showWord}
+            </motion.span>
+          </AnimatePresence>{' '} with CodePM! </h2>
       <button className='start-button'>Start Improving</button>
 
       <motion.div initial="initial" animate="animate" transition={Animation2.transition} variants={Animation2} className='text-wrapper'>

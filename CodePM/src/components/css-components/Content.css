@@ -60,3 +60,7 @@ html, body {
   height: 75px;
   margin: 1rem;
 }
+
+.highlight {
+  background-color: #cf9322;
+}
