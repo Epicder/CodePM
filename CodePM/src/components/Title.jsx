@@ -19,7 +19,7 @@ export default function Title() {
     >
         <div className='title-container'>
           <img src={title} alt="Title" className="title-image"/>
-          <Sun timer={1100}/>
+          <Sun timer={400}/>
         </div>
     </motion.div>
   )

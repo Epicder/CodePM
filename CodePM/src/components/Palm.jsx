@@ -10,17 +10,17 @@ export default function Palm() {
 
   const Animation = {
     initial: { opacity: 0, y: 0 },
-    animate: { opacity: 1, y: 10 },
-    transition: { duration: 2 }
+    animate: { opacity: 1, y: 30 },
+    transition: { duration: 1.3 }
   }
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowPalm(true);
-    }, 2400);
+    }, 800);
 
     return () => clearTimeout(timer);
-  }, [2400]);
+  }, [800]);
 
   return (
     showPalm ?

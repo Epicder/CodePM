@@ -24,7 +24,7 @@ function Content() {
   const Animation2 = {
     initial: { opacity: 0, y: 0 },
     animate: { opacity: 1, y: 30 },
-    transition: { duration: 1.2 }
+    transition: { duration: 1 }
   }
 
   const wordVariants = {
@@ -36,7 +36,7 @@ function Content() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowContent(true);
-    }, 4350);
+    }, 1000);
 
     return () => clearTimeout(timer);
   }, []);
@@ -46,7 +46,7 @@ function Content() {
       const wordsArray = ['skills', 'speed', 'accuracy', 'efficiency', 'productivity'];
       const randomWord = wordsArray[Math.floor(Math.random() * wordsArray.length)];
       setShowWord(randomWord);
-    }, 2500);
+    }, 2000);
 
     return () => clearInterval(wordTimer);
   }, []);
@@ -66,12 +66,16 @@ function Content() {
               {showWord}
             </motion.span>
           </AnimatePresence>{' '} with CodePM! </h2>
-      <button className='start-button'>Start Improving</button>
+      <button className='start-button'><p>Start Improving</p>
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" />
+</svg>
+      </button>
 
       <motion.div initial="initial" animate="animate" transition={Animation2.transition} variants={Animation2} className='text-wrapper'>
       <div className='text-content'>
         <p>
-          CodePm is a tool designed for developers to improve their coding speed and accuracy.
+          CodePm is a typewriting based tool designed for developers to improve their coding speed and accuracy.
           You can use it to practice your coding speed in various programming languages.
           It's a great tool for beginners and experts alike, and can help you improve your coding skills in no time.
           Just start coding and see how fast you can get!
@@ -79,17 +83,14 @@ function Content() {
         <br />
         <br />
         <br />
-        <p>
-          Available languages:
-          <div className='coding-languages-wrapper'>
-            <img src={Python} alt="Python" />
-            <img src={Javascript} alt="Javascript" />
-            <img src={Clang} alt="C lang" />
-            <img src={Css} alt="Css" />
-            <img src={Dart} alt="Dart" />
+        <p> Available languages: </p>
+          <div class="coding-languages-wrapper">
+            <div class="language-card"><img src={Python} alt="Python" /></div>
+            <div class="language-card"><img src={Javascript} alt="Javascript" /></div>
+            <div class="language-card"><img src={Clang} alt="C lang" /></div>
+            <div class="language-card"><img src={Css} alt="Css" /></div>
+            <div class="language-card"><img src={Dart} alt="Dart" /></div>
           </div>
-          
-        </p>
         <br />
         <br />
         <p>
