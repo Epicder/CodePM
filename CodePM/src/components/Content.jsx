@@ -66,7 +66,8 @@ function Content() {
               {showWord}
             </motion.span>
           </AnimatePresence>{' '} with CodePM! </h2>
-      <button className='start-button'><p>Start Improving</p>
+      <button className='start-button'>
+        <p>Start Improving</p>
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
   <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" />
 </svg>
@@ -75,28 +76,31 @@ function Content() {
       <motion.div initial="initial" animate="animate" transition={Animation2.transition} variants={Animation2} className='text-wrapper'>
       <div className='text-content'>
         <p>
-          CodePm is a typewriting based tool designed for developers to improve their coding speed and accuracy.
-          You can use it to practice your coding speed in various programming languages.
-          It's a great tool for beginners and experts alike, and can help you improve your coding skills in no time.
+          CodePm is a <span className='highlight'>typewriting based tool</span> designed for developers to improve their coding speed.
+          It's a tool for beginners and experts, and can help you to <span className='highlight'>improve your coding skills</span> quickly.
           Just start coding and see how fast you can get!
         </p>
         <br />
         <br />
         <br />
-        <p> Available languages: </p>
-          <div class="coding-languages-wrapper">
-            <div class="language-card"><img src={Python} alt="Python" /></div>
-            <div class="language-card"><img src={Javascript} alt="Javascript" /></div>
-            <div class="language-card"><img src={Clang} alt="C lang" /></div>
-            <div class="language-card"><img src={Css} alt="Css" /></div>
-            <div class="language-card"><img src={Dart} alt="Dart" /></div>
-          </div>
-        <br />
-        <br />
-        <p>
-          CPM: Code Per Minute, is the metric that we use to measure how many lines of code you can write in a minute.
+        <div className='languages-container'>
+          <h2> Available languages: </h2>
+            <div class="coding-languages-wrapper">
+              <div class="language-card"><img src={Python} alt="Python" /></div>
+              <div class="language-card"><img src={Javascript} alt="Javascript" /></div>
+              <div class="language-card"><img src={Clang} alt="C lang" /></div>
+              <div class="language-card"><img src={Css} alt="Css" /></div>
+              <div class="language-card"><img src={Dart} alt="Dart" /></div>
+            </div>
+            <br />
+            <br />
+            <br />
+            <p className='cpm-text'>
+          CPM: Code Per Minute, is the metric that we use to measure <strong>how many lines of code you can write in a minute. </strong>
           The higher your CPM, the faster you are at coding.
         </p>
+        </div>
+
         <br />
         <br />
         <br />
