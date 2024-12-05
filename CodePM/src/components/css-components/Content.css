@@ -17,7 +17,7 @@ html, body {
 
 .start-button {
   background-color: transparent;
-  border: solid 2px #aa30aa;
+  border: solid 2px #cf9322;
   color: rgb(243, 243, 243);
   padding: 1rem 1.3rem;
   text-align: center;
@@ -27,22 +27,38 @@ html, body {
   margin: 1rem;
   cursor: pointer;
   border-radius: 10px;
-}
-
-.start-button p {
-  font-family: "Questrial", sans-serif;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
 }
 
 .start-button:hover {
-  background-color: #aa30aa;
+  background: linear-gradient(90deg, #ff8800, #aa30aa);
+  border-color: #ff8800;
+  color: #fff;
+  box-shadow: 0 0 15px #ff8800, 0 0 30px #aa30aa;
+  transform: translateY(-3px);
+}
+
+.start-button:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 200%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: skewX(-45deg);
+  transition: all 0.5s ease;
+}
+
+.start-button:hover:before {
+  left: 100%; 
 }
 
 .start-button:active {
   transform: translateY(2px);
-}
-
-.start-button:focus {
-  outline: none;
+  box-shadow: 0 0 5px #ff8800, 0 0 10px #aa30aa;
 }
 
 .start-button svg, .start-button img {
@@ -57,12 +73,13 @@ html, body {
   display: inline;
   position: relative;
   top: -5px;
+  font-family: "Questrial", sans-serif;
 }
 
 .text-wrapper {
   margin: 0;
   position: absolute;
-  bottom: -610px;
+  bottom: -700px;
   width: 95%;
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
