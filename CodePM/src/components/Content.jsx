@@ -2,6 +2,8 @@ import React from 'react'
 import './css-components/Content.css'
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 // Assets //
 import Python from '../assets/python.png'
@@ -14,6 +16,7 @@ import Dart from '../assets/Dart.png'
 function Content() {
   const [showContent, setShowContent] = useState(false);
   const [showWord, setShowWord] = useState('');
+  const navigate = useNavigate();
 
   const Animation = {
     initial: { opacity: 0, y: 0 },
@@ -51,7 +54,9 @@ function Content() {
     return () => clearInterval(wordTimer);
   }, []);
 
-
+  const HandleButton = () => {
+    return navigate('/typing-test');
+  }
 
   return (
     showContent ?
@@ -66,7 +71,7 @@ function Content() {
               {showWord}
             </motion.span>
           </AnimatePresence>{' '} with CodePM! </h2>
-      <button className='start-button'>
+      <button className='start-button' onClick={HandleButton}>
         <p>Start Improving</p>
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
   <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" />
