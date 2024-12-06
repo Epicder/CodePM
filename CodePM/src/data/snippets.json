@@ -1,0 +1,22 @@
+{
+  "python": [
+    "def fibonacci(n):\n    if n <= 1:\n        return n\n    else:\n        return fibonacci(n-1) + fibonacci(n-2)\n\nfor i in range(10):\n    print(fibonacci(i))",
+    "class Person:\n    def __init__(self, name, age):\n        self.name = name\n        self.age = age\n\n    def greet(self):\n        print(f'Hello, my name is {self.name} and I am {self.age} years old.')\n\np = Person('Alice', 30)\np.greet()"
+  ],
+  "javascript": [
+    "function factorial(n) {\n    if (n === 0) {\n        return 1;\n    }\n    return n * factorial(n - 1);\n}\n\nconsole.log(factorial(5));",
+    "class Animal {\n    constructor(name) {\n        this.name = name;\n    }\n\n    speak() {\n        console.log(`${this.name} makes a noise.`);\n    }\n}\n\nclass Dog extends Animal {\n    speak() {\n        console.log(`${this.name} barks.`);\n    }\n}\n\nlet dog = new Dog('Rex');\ndog.speak();"
+  ],
+  "c": [
+    "#include <stdio.h>\n\nvoid printArray(int arr[], int size) {\n    for (int i = 0; i < size; i++) {\n        printf(\"%d \", arr[i]);\n    }\n    printf(\"\\n\");\n}\n\nint main() {\n    int arr[] = {1, 2, 3, 4, 5};\n    int size = sizeof(arr) / sizeof(arr[0]);\n\n    printArray(arr, size);\n    return 0;\n}",
+    "#include <stdio.h>\n\nint factorial(int n) {\n    if (n == 0) return 1;\n    return n * factorial(n - 1);\n}\n\nint main() {\n    int num = 5;\n    printf(\"Factorial of %d is %d\", num, factorial(num));\n    return 0;\n}"
+  ],
+  "css": [
+    "body {\n    font-family: Arial, sans-serif;\n    margin: 0;\n    padding: 0;\n    background-color: #f4f4f4;\n}\n\n.container {\n    max-width: 1200px;\n    margin: 0 auto;\n    padding: 20px;\n}\n\nh1 {\n    color: #333;\n    text-align: center;\n}",
+    ".button {\n    display: inline-block;\n    padding: 10px 20px;\n    font-size: 16px;\n    color: #fff;\n    background-color: #007bff;\n    border: none;\n    border-radius: 4px;\n    cursor: pointer;\n}\n\n.button:hover {\n    background-color: #0056b3;\n}"
+  ],
+  "dart": [
+    "void main() {\n  List<int> numbers = [1, 2, 3, 4, 5];\n  numbers.forEach((num) {\n    print('Number: \\\\$num');\n  });\n}",
+    "class Animal {\n  String name;\n\n  Animal(this.name);\n\n  void speak() {\n    print('\\\\$name makes a sound');\n  }\n}\n\nclass Dog extends Animal {\n  Dog(String name) : super(name);\n\n  @override\n  void speak() {\n    print('\\\\$name barks');\n  }\n}\n\nvoid main() {\n  Dog dog = Dog('Rex');\n  dog.speak();\n}"
+  ]
+}

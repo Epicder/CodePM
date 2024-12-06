@@ -1,13 +1,16 @@
-import React from 'react';
+import './typing-css/TypingArea.css';
 
 export default function TypingArea({ snippet, userInput, onChange }) {
   return (
-    <div className="typing-container">
-      <pre>{snippet}</pre>
-      <textarea 
-        value={userInput} 
-        onChange={onChange} 
-        placeholder="Start typing here..."
+    <div className="typing-area">
+      <div className="snippet-overlay">
+        {snippet}
+      </div>
+      <textarea
+        className="user-input"
+        value={userInput}
+        onChange={onChange}
+        spellCheck="false"
       />
     </div>
   );
