@@ -18,18 +18,20 @@
   left: 0;
   width: 100%;
   height: 100%;
-  color: #6b9955af;
+  color: #bebebe50;
   white-space: pre-wrap;
-  padding: 10px;
   pointer-events: none;
   font-family: "Fira Code", monospace;
   font-size: 14px;
+  text-align: left;
+  padding: 10px;
+  resize: none;
 }
 
 .user-input {
   position: absolute;
   top: 0;
-  left: 43.6%;
+  left: 0;
   width: 100%;
   height: 100%;
   background: transparent;
@@ -42,5 +44,19 @@
   resize: none;
   white-space: pre-wrap;
   overflow: auto;
+  line-height: 1.5;
   caret-color: #ffffff; 
+}
+
+span {
+  font-weight: bold;
+}
+span[style*="color: green"] {
+  background-color: #6b9955c7;
+}
+span[style*="color: red"] {
+  background-color: #f44747dc;
+}
+span[style*="color: gray"] {
+  color: #aaaaaa;
 }
