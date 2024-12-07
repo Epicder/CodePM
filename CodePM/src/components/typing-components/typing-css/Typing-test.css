@@ -1,0 +1,106 @@
+h3 {
+  font-size: 1.4rem;
+
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.header-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+}
+
+.language-ch-container {
+  height: 100px;
+  width: 10%;
+  align-items: center;
+  justify-content: left;
+  position: relative;
+  left: 22.6%;
+  top: 35px;
+}
+
+.language-ch-container select {
+  font-family: "Questrial", sans-serif;
+  width: 100px;
+  height: 30px;
+  background-color: #222020;
+  color: #d4d4d4;
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  position: relative;
+  z-index: 100;
+}
+
+
+.start-button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: -30px;
+  width: 100%;
+}
+
+.start-button-container button {
+  font-family: "Questrial", sans-serif;
+  background-color: transparent;
+  border: solid 2px #cf9322;
+  color: rgb(243, 243, 243);
+  padding: 1rem 1.3rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1.2rem;
+  margin: 1rem;
+  cursor: pointer;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  width: 250px;
+}
+
+.timer-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #d4d4d4;
+  background-color: #222020;
+  border-radius: 7px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 120px;
+  height: 55px;
+  margin: 20px auto;
+  position: relative;
+  top: -135px;
+  left: 22%;
+}
+
+.timer-container p {
+  font-size: 2rem;
+  font-weight: 500;
+  margin: 3px;
+  padding: 0;
+  text-align: center;
+}
+
+
+.typing-area {
+  width: 50%;
+  height: 500px;
+  background-color: #1e1e1e;
+  color: #d4d4d4;
+  border: 1px solid #3c3c3c;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  font-family: "Fira Code", monospace;
+  font-size: 14px;
+}

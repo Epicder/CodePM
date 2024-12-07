@@ -1,7 +1,9 @@
 .typing-area {
   position: relative;
+  bottom: 130px;
   width: 50%;
   height: 500px;
+  left: 25%;
   background-color: #1e1e1e;
   color: #d4d4d4;
   border: 1px solid #3c3c3c;
@@ -22,7 +24,7 @@
   white-space: pre-wrap;
   pointer-events: none;
   font-family: "Fira Code", monospace;
-  font-size: 14px;
+  font-size: 18px;
   text-align: left;
   padding: 10px;
   resize: none;
@@ -39,7 +41,7 @@
   border: none;
   outline: none;
   font-family: "Fira Code", monospace;
-  font-size: 14px;
+  font-size: 18px;
   padding: 10px;
   resize: none;
   white-space: pre-wrap;

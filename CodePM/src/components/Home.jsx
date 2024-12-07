@@ -8,7 +8,7 @@ function Home() {
     <>
       <Title/>
       <Content/>
-      <Palm/>
+      <Palm timer={800}/>
     </>
   )
 }

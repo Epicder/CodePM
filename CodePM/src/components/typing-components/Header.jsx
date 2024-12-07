@@ -1,9 +1,12 @@
 import React from 'react';
+import Titletxt from '../../assets/Titletxt.png';
 
 export default function Header() {
   return (
     <header>
-      <h1>Typing Test</h1>
+      <div className="header-container">
+        <img src={Titletxt} alt="Typing Test" />
+      </div>
     </header>
   );
 }

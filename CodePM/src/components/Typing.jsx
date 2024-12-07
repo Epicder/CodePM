@@ -6,6 +6,8 @@ import Timer from './typing-components/Timer';
 import TypingArea from './typing-components/TypingArea';
 import snippets from '../data/snippets.json';
 import { useEffect } from 'react';
+import './typing-components/typing-css/Typing-test.css';
+import Palm from '../components/Palm';
 
 export default function Typing() {
   const [language, setLanguage] = useState('python');
@@ -45,9 +47,9 @@ useEffect(() => {
 
     return () => clearInterval(timer);
   } else if (testStarted && timeLeft === 0) {
-    const cpm = Math.round((correctCharacters / 60) * 60); // Basado en tiempo estándar
+    const cpm = Math.round((correctCharacters / 30) * 30);
     alert(`¡Tiempo terminado!\nPrecisión: ${accuracy}%\nCPM: ${cpm}`);
-    setTestStarted(false); // Detener el test
+    setTestStarted(false);
   }
 }, [testStarted, timeLeft, correctCharacters, accuracy]);
 
@@ -109,6 +111,7 @@ const getColoredText = () => {
   return (
     <div>
       <Header />
+      <Palm timer={1}/>
       <LanguageSelector onChange={handleLanguageChange} />
       <StartButton onClick={handleStartClick} />
       <Timer time={formatTime(timeLeft)} />

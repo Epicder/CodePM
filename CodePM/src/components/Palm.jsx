@@ -4,7 +4,7 @@ import './css-components/Palm.css'
 import { useState, useEffect } from 'react';
 import { motion } from "framer-motion";
 
-export default function Palm() {
+export default function Palm( props ) {
 
   const [showPalm, setShowPalm] = useState(false);
 
@@ -17,10 +17,10 @@ export default function Palm() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowPalm(true);
-    }, 800);
+    }, props.timer);
 
     return () => clearTimeout(timer);
-  }, [800]);
+  }, [props.timer]);
 
   return (
     showPalm ?
