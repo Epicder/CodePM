@@ -8,10 +8,12 @@ import snippets from '../data/snippets.json';
 import { useEffect } from 'react';
 import './typing-components/typing-css/Typing-test.css';
 import Palm from '../components/Palm';
+import ResetButton from './typing-components/ResetButton';
+
 
 export default function Typing() {
   const [language, setLanguage] = useState('python');
-  const [currentSnippet, setCurrentSnippet] = useState('');
+  
   const [time, setTime] = useState('00:00');
   const [timeLeft, setTimeLeft] = useState(60);
   const [userInput, setUserInput] = useState('');
@@ -24,19 +26,27 @@ export default function Typing() {
     const randomIndex = Math.floor(Math.random() * snippetsForLanguage.length);
     return snippetsForLanguage[randomIndex];
   };
+  const [currentSnippet, setCurrentSnippet] = useState(getRandomSnippet(language));
   
 const handleLanguageChange = (e) => {
   const selectedLanguage = e.target.value;
   setLanguage(selectedLanguage);
+  setCurrentSnippet(getRandomSnippet(selectedLanguage));
 };
 
 const handleStartClick = () => {
   console.log('Test started for language:', language);
-  const snippet = getRandomSnippet(language);
-  setCurrentSnippet(snippet);
   setUserInput('');
   setTestStarted(true);
   setTimeLeft(60); 
+};
+
+const handleResetClick = () => {
+  console.log('Reset button clicked');
+  setCurrentSnippet(getRandomSnippet(language));
+  setUserInput('');
+  setTestStarted(false);
+  setTimeLeft(60);
 };
 
 useEffect(() => {
@@ -110,12 +120,15 @@ const getColoredText = () => {
 
   return (
     <div>
-      <Header />
-      <Palm timer={1}/>
-      <LanguageSelector onChange={handleLanguageChange} />
-      <StartButton onClick={handleStartClick} />
-      <Timer time={formatTime(timeLeft)} />
-      <TypingArea snippet={currentSnippet} userInput={userInput} onChange={handleInputChange} getColoredText={getColoredText()} onKeyDown={handleKeyDown} disabled={!testStarted || timeLeft === 0} />
+      <div className='blur-bg'>
+        <Header />
+        <Palm timer={1}/>
+        <LanguageSelector onChange={handleLanguageChange} />
+        <StartButton onClick={handleStartClick} />
+        <ResetButton onReset={handleResetClick} />
+        <Timer time={formatTime(timeLeft)} />
+        <TypingArea snippet={currentSnippet} userInput={userInput} onChange={handleInputChange} getColoredText={getColoredText()} onKeyDown={handleKeyDown} disabled={!testStarted || timeLeft === 0} />
+      </div>
     </div>
   );
 }

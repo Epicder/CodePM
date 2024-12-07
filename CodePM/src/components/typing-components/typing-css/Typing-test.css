@@ -19,7 +19,7 @@ h3 {
   justify-content: left;
   position: relative;
   left: 22.6%;
-  top: 35px;
+  top: 80px;
 }
 
 .language-ch-container select {
@@ -44,7 +44,7 @@ h3 {
   justify-content: center;
   align-items: center;
   position: relative;
-  top: -30px;
+  top: 0;
   width: 100%;
 }
 
@@ -103,4 +103,30 @@ h3 {
   overflow: hidden;
   font-family: "Fira Code", monospace;
   font-size: 14px;
+}
+
+.reset-button-container {
+  display: flex;
+    height: 40px;
+    width: 40px;
+    align-items: center;
+    justify-content: left;
+    position: relative;
+    left: 58%;
+    top: -60px;
+}
+
+.reset-button-container button {
+  font-family: "Questrial", sans-serif;
+ border: none;
+  border-radius: 6px;
+  color: rgb(243, 243, 243);
+  padding: 0.5rem 0.8rem;
+}
+
+svg {
+  position: relative;
+  width: 1.5rem;
+  height: 1.5rem;
+  top: 1px;
 }
