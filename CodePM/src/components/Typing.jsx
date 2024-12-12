@@ -45,20 +45,20 @@ const handleStartClick = () => {
 
 const handleResetClick = () => {
   console.log('Reset button clicked');
+  setShowModal(false);
   setCurrentSnippet(getRandomSnippet(language));
   setUserInput('');
   setTestStarted(false);
   setTimeLeft(60);
 };
-
+const cpm = Math.round((correctCharacters / 30) * 30); 
 useEffect(() => {
   if (testStarted && timeLeft > 0) {
     const timer = setInterval(() => {
       setTimeLeft((prevTime) => prevTime - 1);
     }, 1000);
-
      if (userInput.trim().toLowerCase() === currentSnippet.trim().toLowerCase()) {
-      const cpm = Math.round((correctCharacters / 30) * 30);   
+        
       setTestStarted(false);
       setShowModal(true);
     }
@@ -136,7 +136,7 @@ const getColoredText = () => {
         <ResetButton onReset={handleResetClick} />
         <Timer time={formatTime(timeLeft)} />
         <TypingArea snippet={currentSnippet} userInput={userInput} onChange={handleInputChange} getColoredText={getColoredText()} onKeyDown={handleKeyDown} disabled={!testStarted || timeLeft === 0} />
-        {showModal && <ModalTest />}
+        {showModal && <ModalTest accuracy={accuracy} handleResetClick={handleResetClick} cpm={cpm}/>}
       </div>
   );
 }
