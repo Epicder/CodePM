@@ -9,6 +9,7 @@ import { useEffect } from 'react';
 import './typing-components/typing-css/Typing-test.css';
 import Palm from '../components/Palm';
 import ResetButton from './typing-components/ResetButton';
+import ModalTest from './typing-components/ModalTest';
 
 
 export default function Typing() {
@@ -20,6 +21,7 @@ export default function Typing() {
   const [accuracy, setAccuracy] = useState(100)
   const [testStarted, setTestStarted] = useState(false);
   const [correctCharacters, setCorrectCharacters] = useState(0);
+  const [showModal, setShowModal] = useState(false);
 
   const getRandomSnippet = (language) => {
     const snippetsForLanguage = snippets[language];
@@ -55,12 +57,19 @@ useEffect(() => {
       setTimeLeft((prevTime) => prevTime - 1);
     }, 1000);
 
+     if (userInput.trim().toLowerCase() === currentSnippet.trim().toLowerCase()) {
+      const cpm = Math.round((correctCharacters / 30) * 30);   
+      setTestStarted(false);
+      setShowModal(true);
+    }
+  
     return () => clearInterval(timer);
   } else if (testStarted && timeLeft === 0) {
     const cpm = Math.round((correctCharacters / 30) * 30);
-    alert(`¡Tiempo terminado!\nPrecisión: ${accuracy}%\nCPM: ${cpm}`);
+    alert(`¡Tiempo terminado!\nPrecisión: ${accuracy}%\nCPM: ${cpm} \n Tu input: ${userInput} \n La respuesta correcta: ${currentSnippet}`);
     setTestStarted(false);
-  }
+
+  } 
 }, [testStarted, timeLeft, correctCharacters, accuracy]);
 
 const formatTime = (time) => {
@@ -127,6 +136,7 @@ const getColoredText = () => {
         <ResetButton onReset={handleResetClick} />
         <Timer time={formatTime(timeLeft)} />
         <TypingArea snippet={currentSnippet} userInput={userInput} onChange={handleInputChange} getColoredText={getColoredText()} onKeyDown={handleKeyDown} disabled={!testStarted || timeLeft === 0} />
+        {showModal && <ModalTest />}
       </div>
   );
 }
