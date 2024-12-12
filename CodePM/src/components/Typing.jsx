@@ -52,27 +52,36 @@ const handleResetClick = () => {
   setTimeLeft(60);
 };
 
-const cpm = Math.round((correctCharacters / 60) * 30); // to fix
+const cpm = Math.round((correctCharacters / timeLeft) * 16); // to fix
 
 useEffect(() => {
-  if (testStarted && timeLeft > 0) {
+  if (testStarted) {
     const timer = setInterval(() => {
-      setTimeLeft((prevTime) => prevTime - 1);
+      setTimeLeft((prevTime) => {
+        if (prevTime > 1) {
+          return prevTime - 1;
+        } else {
+          clearInterval(timer);
+          setTestStarted(false);
+          return 0;
+        }
+      });
     }, 1000);
-     if (userInput.trim().toLowerCase() === currentSnippet.trim().toLowerCase()) {
-        
-      setTestStarted(false);
-      setShowModal(true);
-    }
-  
     return () => clearInterval(timer);
-  } else if (testStarted && timeLeft === 0) {
-    const cpm = Math.round((correctCharacters / 30) * 30);
-    alert(`¡Tiempo terminado!\nPrecisión: ${accuracy}%\nCPM: ${cpm} \n Tu input: ${userInput} \n La respuesta correcta: ${currentSnippet}`);
-    setTestStarted(false);
+  }
+}, [testStarted]);
 
-  } 
-}, [testStarted, timeLeft, correctCharacters, accuracy]);
+
+useEffect(() => {
+  if (
+    testStarted &&
+    userInput.trim().toLowerCase() === currentSnippet.trim().toLowerCase()
+  ) {
+    setTestStarted(false);
+    setShowModal(true);
+  }
+}, [userInput, currentSnippet, testStarted]);
+
 
 const formatTime = (time) => {
   const minutes = Math.floor(time / 60);
