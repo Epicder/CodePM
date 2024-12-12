@@ -1,22 +1,32 @@
 {
   "python": [
     "def fibonacci(n):\n    if n <= 1:\n        return n\n    else:\n        return fibonacci(n-1) + fibonacci(n-2)\n\nfor i in range(10):\n    print(fibonacci(i))",
-    "class Person:\n    def __init__(self, name, age):\n        self.name = name\n        self.age = age\n\n    def greet(self):\n        print(f'Hello, my name is {self.name} and I am {self.age} years old.')\n\np = Person('Alice', 30)\np.greet()"
+    "class Person:\n    def __init__(self, name, age):\n        self.name = name\n        self.age = age\n\n    def greet(self):\n        print(f'Hello, my name is {self.name} and I am {self.age} years old.')\n\np = Person('Alice', 30)\np.greet()",
+    "def is_prime(num):\n    if num <= 1:\n        return False\n    for i in range(2, int(num ** 0.5) + 1):\n        if num % i == 0:\n            return False\n    return True\n\nprint(is_prime(7))",
+    "from datetime import datetime\n\nclass Event:\n    def __init__(self, name, date):\n        self.name = name\n        self.date = date\n\n    def days_until(self):\n        delta = self.date - datetime.now()\n        return delta.days\n\nmy_event = Event('Meeting', datetime(2024, 12, 31))\nprint(f'Days until {my_event.name}: {my_event.days_until()}')"
   ],
   "javascript": [
     "function factorial(n) {\n    if (n === 0) {\n        return 1;\n    }\n    return n * factorial(n - 1);\n}\n\nconsole.log(factorial(5));",
-    "class Animal {\n    constructor(name) {\n        this.name = name;\n    }\n\n    speak() {\n        console.log(`${this.name} makes a noise.`);\n    }\n}\n\nclass Dog extends Animal {\n    speak() {\n        console.log(`${this.name} barks.`);\n    }\n}\n\nlet dog = new Dog('Rex');\ndog.speak();"
+    "class Animal {\n    constructor(name) {\n        this.name = name;\n    }\n\n    speak() {\n        console.log(`${this.name} makes a noise.`);\n    }\n}\n\nclass Dog extends Animal {\n    speak() {\n        console.log(`${this.name} barks.`);\n    }\n}\n\nlet dog = new Dog('Rex');\ndog.speak();",
+    "function reverseString(str) {\n    return str.split('').reverse().join('');\n}\n\nconsole.log(reverseString('hello'));",
+    "class Calculator {\n    static add(a, b) {\n        return a + b;\n    }\n\n    static subtract(a, b) {\n        return a - b;\n    }\n}\n\nconsole.log(Calculator.add(5, 3));\nconsole.log(Calculator.subtract(9, 4));"
   ],
   "c": [
     "#include <stdio.h>\n\nvoid printArray(int arr[], int size) {\n    for (int i = 0; i < size; i++) {\n        printf(\"%d \", arr[i]);\n    }\n    printf(\"\\n\");\n}\n\nint main() {\n    int arr[] = {1, 2, 3, 4, 5};\n    int size = sizeof(arr) / sizeof(arr[0]);\n\n    printArray(arr, size);\n    return 0;\n}",
-    "#include <stdio.h>\n\nint factorial(int n) {\n    if (n == 0) return 1;\n    return n * factorial(n - 1);\n}\n\nint main() {\n    int num = 5;\n    printf(\"Factorial of %d is %d\", num, factorial(num));\n    return 0;\n}"
+    "#include <stdio.h>\n\nint factorial(int n) {\n    if (n == 0) return 1;\n    return n * factorial(n - 1);\n}\n\nint main() {\n    int num = 5;\n    printf(\"Factorial of %d is %d\", num, factorial(num));\n    return 0;\n}",
+    "#include <stdio.h>\n\nint findMax(int arr[], int size) {\n    int max = arr[0];\n    for (int i = 1; i < size; i++) {\n        if (arr[i] > max) {\n            max = arr[i];\n        }\n    }\n    return max;\n}\n\nint main() {\n    int numbers[] = {3, 5, 7, 2, 8};\n    int size = sizeof(numbers) / sizeof(numbers[0]);\n\n    printf(\"Maximum value: %d\\n\", findMax(numbers, size));\n    return 0;\n}",
+    "#include <stdio.h>\n\nvoid reverseString(char* str) {\n    int len = 0, i;\n    char temp;\n    while (str[len] != '\\0') len++;\n    for (i = 0; i < len / 2; i++) {\n        temp = str[i];\n        str[i] = str[len - i - 1];\n        str[len - i - 1] = temp;\n    }\n}\n\nint main() {\n    char str[] = \"hello\";\n    reverseString(str);\n    printf(\"Reversed string: %s\\n\", str);\n    return 0;\n}"
   ],
   "css": [
     "body {\n    font-family: Arial, sans-serif;\n    margin: 0;\n    padding: 0;\n    background-color: #f4f4f4;\n}\n\n.container {\n    max-width: 1200px;\n    margin: 0 auto;\n    padding: 20px;\n}\n\nh1 {\n    color: #333;\n    text-align: center;\n}",
-    ".button {\n    display: inline-block;\n    padding: 10px 20px;\n    font-size: 16px;\n    color: #fff;\n    background-color: #007bff;\n    border: none;\n    border-radius: 4px;\n    cursor: pointer;\n}\n\n.button:hover {\n    background-color: #0056b3;\n}"
+    ".button {\n    display: inline-block;\n    padding: 10px 20px;\n    font-size: 16px;\n    color: #fff;\n    background-color: #007bff;\n    border: none;\n    border-radius: 4px;\n    cursor: pointer;\n}\n\n.button:hover {\n    background-color: #0056b3;\n}",
+    ".card {\n    border: 1px solid #ddd;\n    border-radius: 8px;\n    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);\n    padding: 20px;\n    background-color: #fff;\n}\n\n.card:hover {\n    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);\n}",
+    ".navbar {\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    background-color: #333;\n    padding: 10px 20px;\n}\n\n.navbar a {\n    color: #fff;\n    text-decoration: none;\n    padding: 5px 10px;\n}\n\n.navbar a:hover {\n    background-color: #575757;\n    border-radius: 4px;\n}"
   ],
   "dart": [
     "void main() {\n  List<int> numbers = [1, 2, 3, 4, 5];\n  numbers.forEach((num) {\n    print('Number: \\\\$num');\n  });\n}",
-    "class Animal {\n  String name;\n\n  Animal(this.name);\n\n  void speak() {\n    print('\\\\$name makes a sound');\n  }\n}\n\nclass Dog extends Animal {\n  Dog(String name) : super(name);\n\n  @override\n  void speak() {\n    print('\\\\$name barks');\n  }\n}\n\nvoid main() {\n  Dog dog = Dog('Rex');\n  dog.speak();\n}"
+    "class Animal {\n  String name;\n\n  Animal(this.name);\n\n  void speak() {\n    print('\\\\$name makes a sound');\n  }\n}\n\nclass Dog extends Animal {\n  Dog(String name) : super(name);\n\n  @override\n  void speak() {\n    print('\\\\$name barks');\n  }\n}\n\nvoid main() {\n  Dog dog = Dog('Rex');\n  dog.speak();\n}",
+    "void main() {\n  Map<String, int> scores = {\n    'Alice': 85,\n    'Bob': 92,\n    'Charlie': 78,\n  };\n\n  scores.forEach((name, score) {\n    print('Name: \\\\$name, Score: \\\\$score');\n  });\n}",
+    "class Circle {\n  double radius;\n\n  Circle(this.radius);\n\n  double get area => 3.14159 * radius * radius;\n  double get circumference => 2 * 3.14159 * radius;\n}\n\nvoid main() {\n  Circle circle = Circle(5.0);\n  print('Area: \\\\$circle.area');\n  print('Circumference: \\\\$circle.circumference');\n}"
   ]
 }

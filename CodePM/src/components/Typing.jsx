@@ -72,7 +72,7 @@ useEffect(() => {
   }
 }, [testStarted]);
 
-const cpm = elapsedTime > 0 ? Math.round((correctCharacters / 5) / (elapsedTime / 60)) : 0;
+const cpm = elapsedTime > 0 ? Math.round((correctCharacters / 4.2) / (elapsedTime / 60)) : 0;
 
 useEffect(() => {
   if (
@@ -152,7 +152,7 @@ const getColoredText = () => {
         <ResetButton onReset={handleResetClick} />
         <Timer time={formatTime(timeLeft)} />
         <TypingArea snippet={currentSnippet} userInput={userInput} onChange={handleInputChange} getColoredText={getColoredText()} onKeyDown={handleKeyDown} disabled={!testStarted || timeLeft === 0} />
-        {showModal && <ModalTest accuracy={accuracy} handleResetClick={handleResetClick} cpm={cpm}/>}
+        {showModal && <ModalTest accuracy={accuracy} handleResetClick={handleResetClick} cpm={cpm} language={language}/>}
       </div>
   );
 }

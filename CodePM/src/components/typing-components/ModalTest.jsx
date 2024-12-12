@@ -31,7 +31,7 @@ export default function ModalTest(props) {
         <br />
         Your code accuracy is: {props.accuracy}%
         <br />
-        Your CPM is: {props.cpm}!
+        Your CPM is: {props.cpm} in {props.language}!
         <br />
         <br />
         {textResult}
