@@ -51,7 +51,9 @@ const handleResetClick = () => {
   setTestStarted(false);
   setTimeLeft(60);
 };
-const cpm = Math.round((correctCharacters / 30) * 30); 
+
+const cpm = Math.round((correctCharacters / 60) * 30); // to fix
+
 useEffect(() => {
   if (testStarted && timeLeft > 0) {
     const timer = setInterval(() => {
