@@ -120,7 +120,6 @@ const getColoredText = () => {
 
   return (
     <div>
-      <div className='blur-bg'>
         <Header />
         <Palm timer={1}/>
         <LanguageSelector onChange={handleLanguageChange} />
@@ -129,6 +128,5 @@ const getColoredText = () => {
         <Timer time={formatTime(timeLeft)} />
         <TypingArea snippet={currentSnippet} userInput={userInput} onChange={handleInputChange} getColoredText={getColoredText()} onKeyDown={handleKeyDown} disabled={!testStarted || timeLeft === 0} />
       </div>
-    </div>
   );
 }

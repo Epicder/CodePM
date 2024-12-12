@@ -96,6 +96,19 @@ html, body {
   text-align: center;
 }
 
+.text-wrapper-2 {
+  margin: 0;
+  position: absolute;
+  bottom: -700px;
+  width: 93%;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  gap: 2rem;
+}
+
 
 /* SVGS Y CARD */
 
