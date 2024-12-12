@@ -22,6 +22,7 @@ export default function Typing() {
   const [testStarted, setTestStarted] = useState(false);
   const [correctCharacters, setCorrectCharacters] = useState(0);
   const [showModal, setShowModal] = useState(false);
+  const [elapsedTime, setElapsedTime] = useState(0);
 
   const getRandomSnippet = (language) => {
     const snippetsForLanguage = snippets[language];
@@ -41,6 +42,7 @@ const handleStartClick = () => {
   setUserInput('');
   setTestStarted(true);
   setTimeLeft(60); 
+  setElapsedTime(0);
 };
 
 const handleResetClick = () => {
@@ -52,13 +54,12 @@ const handleResetClick = () => {
   setTimeLeft(60);
 };
 
-const cpm = Math.round((correctCharacters / timeLeft) * 16); // to fix
-
 useEffect(() => {
   if (testStarted) {
     const timer = setInterval(() => {
       setTimeLeft((prevTime) => {
         if (prevTime > 1) {
+          setElapsedTime((prevElapsedTime) => prevElapsedTime + 1);
           return prevTime - 1;
         } else {
           clearInterval(timer);
@@ -71,12 +72,16 @@ useEffect(() => {
   }
 }, [testStarted]);
 
+const cpm = elapsedTime > 0 ? Math.round((correctCharacters / 5) / (elapsedTime / 60)) : 0;
 
 useEffect(() => {
   if (
     testStarted &&
     userInput.trim().toLowerCase() === currentSnippet.trim().toLowerCase()
   ) {
+    setTestStarted(false);
+    setShowModal(true);
+  } else if (timeLeft === 0) {
     setTestStarted(false);
     setShowModal(true);
   }
