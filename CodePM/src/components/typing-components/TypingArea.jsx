@@ -36,7 +36,7 @@ export default function TypingArea({ userInput, onChange, getColoredText, onKeyD
           <br />
           CPM &lt; 100 - Advanced
           <br />
-          CPM &gt; 100 - Coding God
+          CPM &gt; 100 - ???
         </p>
     </div>
     </div>
