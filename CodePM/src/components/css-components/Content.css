@@ -177,11 +177,33 @@ strong {
 
 }
 
+@media (max-width: 1700px) {
+  .text-wrapper, .text-wrapper-2 {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    bottom: -600px;
+  }
+
+  .text-content {
+    font-size: 1.1rem;
+  }
+
+  .start-button {
+    font-size: 1rem;
+    padding: 0.8rem 1rem;
+  }
+
+  .start-button svg, .start-button img {
+    width: 1.2rem;
+    height: 1.2rem;
+  }
+
+}
 @media (max-width: 1024px) {
   .text-wrapper, .text-wrapper-2 {
     grid-template-columns: 1fr;
     gap: 1rem;
-    bottom: -500px;
+    bottom: -700px;
   }
 
   .text-content {
@@ -227,26 +249,27 @@ strong {
 
   p {
     margin: 14px;
+    padding-bottom: 10px;
   }
 
-  h2 {
-    font-size: 1.8rem;
+  .content-title {
+    font-size: 2.2rem;
     position: relative;
-    top: -90px;
+    top: -160px;
 
   }
   .start-button {
     font-size: 0.9rem;
     padding: 0.6rem 0.8rem;
     position: relative;
-    top: -100px;
+    top: -170px;
   }
 
   .text-wrapper, .text-wrapper-2 {
     font-size: 0.9rem;
     width: 110%;
     padding: 0.5rem;
-    bottom: -800px;
+    bottom: -600px;
   }
 
   .language-card {

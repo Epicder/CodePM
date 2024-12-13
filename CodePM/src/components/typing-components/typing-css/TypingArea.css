@@ -62,3 +62,37 @@ span[style*="color: red"] {
 span[style*="color: gray"] {
   color: #aaaaaa;
 }
+
+@media screen and (max-width: 768px) {
+  .typing-area {
+    width: 90%;
+    left: 5%;
+    bottom: 80px;
+    height: 400px;
+    font-size: 12px;
+  }
+
+  .snippet-overlay,
+  .user-input {
+    font-size: 14px;
+    padding: 8px;
+  }
+}
+
+/* Para pantallas medianas (768px a 1024px) */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .typing-area {
+    width: 70%;
+    left: 15%;
+    bottom: 100px;
+    height: 450px;
+    font-size: 13px;
+  }
+
+  .snippet-overlay,
+  .user-input {
+    font-size: 16px;
+    padding: 10px;
+  }
+}
+

@@ -62,7 +62,7 @@ function Content() {
     showContent ?
     <>
     <motion.div className='content-wrapper' initial="initial" animate="animate" transition={Animation.transition} variants={Animation}>
-    <h2>
+    <h2 className='content-title'>
           Improve your code{' '}
           <AnimatePresence mode="wait">
             {}

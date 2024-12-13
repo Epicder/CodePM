@@ -16,12 +16,6 @@
   z-index: -1;
 }
 
-@media (max-width: 1024px) {
-  .palm-container img {
-    width: 150%;
-    height: auto;
-  }
-}
 
 @media (max-width: 768px) {
   .palm-container {
@@ -44,6 +38,6 @@
     height: auto;
     position: relative;
     top: -50px;
-    right: 110px;
+    right: 160px;
   }
 }
