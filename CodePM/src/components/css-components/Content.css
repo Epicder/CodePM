@@ -177,3 +177,85 @@ strong {
 
 }
 
+@media (max-width: 1024px) {
+  .text-wrapper, .text-wrapper-2 {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    bottom: -500px;
+  }
+
+  .text-content {
+    font-size: 1.1rem;
+  }
+
+  .start-button {
+    font-size: 1rem;
+    padding: 0.8rem 1rem;
+  }
+
+  .start-button svg, .start-button img {
+    width: 1.2rem;
+    height: 1.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .content-wrapper {
+    padding: 1rem;
+  }
+
+  .text-wrapper, .text-wrapper-2 {
+    padding: 1rem;
+  }
+
+  .coding-languages-wrapper {
+    gap: 0.5rem;
+  }
+
+  .language-card {
+    width: 70px;
+    height: 70px;
+  }
+
+  .language-card img {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  p {
+    margin: 14px;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+    position: relative;
+    top: -90px;
+
+  }
+  .start-button {
+    font-size: 0.9rem;
+    padding: 0.6rem 0.8rem;
+    position: relative;
+    top: -100px;
+  }
+
+  .text-wrapper, .text-wrapper-2 {
+    font-size: 0.9rem;
+    width: 110%;
+    padding: 0.5rem;
+    bottom: -800px;
+  }
+
+  .language-card {
+    width: 60px;
+    height: 60px;
+  }
+
+  .language-card img {
+    width: 35px;
+    height: 35px;
+  }
+}

@@ -101,7 +101,7 @@ function Content() {
             <br />
             <br />
             <p className='cpm-text'>
-          CPM: Code Per Minute, is the metric that we use to measure <strong>how many lines of code you can write in a minute. </strong>
+          CPM: Code Per Minute, is the metric that we use to measure <strong>how many code (words) you can write in a minute. </strong>
           The higher your CPM, the faster you are at coding.
         </p>
         </div>
