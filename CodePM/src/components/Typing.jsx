@@ -10,6 +10,7 @@ import './typing-components/typing-css/Typing-test.css';
 import Palm from '../components/Palm';
 import ResetButton from './typing-components/ResetButton';
 import ModalTest from './typing-components/ModalTest';
+import { useNavigate } from 'react-router-dom';
 
 
 export default function Typing() {
@@ -23,6 +24,20 @@ export default function Typing() {
   const [correctCharacters, setCorrectCharacters] = useState(0);
   const [showModal, setShowModal] = useState(false);
   const [elapsedTime, setElapsedTime] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+  const navigate = useNavigate();
+  useEffect(() => {
+    const checkDevice = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    checkDevice();
+    window.addEventListener("resize", checkDevice);
+
+    return () => window.removeEventListener("resize", checkDevice);
+  }, []);
+
+ 
 
   const getRandomSnippet = (language) => {
     const snippetsForLanguage = snippets[language];
@@ -143,6 +158,26 @@ const getColoredText = () => {
     </>
   );
 };
+
+const HandleButton = () => {
+  return navigate('/');
+}
+
+if (isMobile) {
+  return (
+    <>
+    <Palm timer={1}/>
+    <div className='mobile-warning'>
+      <p>Why would you try to code in your phone?
+        <br />
+        <br />
+        Check this page on a computer if you want to test your coding skills!
+      </p>
+      <button className='start-button-warning' onClick={HandleButton}>return to the menu</button>
+    </div>
+    </>
+  );
+}
 
   return (
     <div>

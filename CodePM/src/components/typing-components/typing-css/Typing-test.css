@@ -5,6 +5,25 @@ h3 {
   margin-bottom: 1rem;
 }
 
+.start-button-warning{
+  font-family: "Questrial", sans-serif;
+  background-color: rgba(34, 33, 33, 0.486);
+  border: solid 2px #cf9322;
+  color: rgb(243, 243, 243);
+  padding: 1rem 1.3rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1.2rem;
+  margin: 1rem;
+  cursor: pointer;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  width: 250px;
+}
+
 .header-container {
   display: flex;
   justify-content: center;
@@ -57,7 +76,7 @@ h3 {
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   margin: 1rem;
   cursor: pointer;
   border-radius: 10px;
@@ -287,6 +306,7 @@ svg {
       backdrop-filter: blur(10px);
       gap: 2rem;
   }
+  
 
   body {
     background-size: 280% 280%;
