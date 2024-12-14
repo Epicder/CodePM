@@ -178,7 +178,7 @@ strong {
 }
 
 @media (max-width: 1700px) {
-  .text-wrapper, .text-wrapper-2 {
+  .text-wrapper{
     grid-template-columns: 1fr;
     gap: 1rem;
     bottom: -600px;

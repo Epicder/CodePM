@@ -112,7 +112,7 @@ h3 {
     align-items: center;
     justify-content: left;
     position: relative;
-    left: 58%;
+    left: 59%;
     top: -60px;
 }
 
@@ -198,131 +198,8 @@ svg {
 }
 
 
-@media screen and (max-width: 768px) {
-  h3 {
-    font-size: 1.2rem;
-  }
 
-  .header-container {
-    height: 100px;
-  }
-
-  .language-ch-container {
-    width: 80%;
-    left: 10%;
-    top: 50px;
-    height: auto;
-  }
-
-  .language-ch-container select {
-    width: 100%;
-    font-size: 0.9rem;
-  }
-
-  .start-button-container button {
-    width: 100%;
-    font-size: 1rem;
-  }
-
-  .timer-container {
-    width: 100px;
-    height: 50px;
-    top: -100px;
-    left: 10%;
-  }
-
-  .timer-container p {
-    font-size: 1.8rem;
-  }
-
-  .typing-area {
-    width: 90%;
-    height: 350px;
-    font-size: 12px;
-  }
-
-  .reset-button-container {
-    left: 50%;
-    top: -40px;
-    height: auto;
-  }
-
-  .modal {
-    width: 90%;
-    padding: 15px;
-    font-size: 1rem;
-  }
-
-  .modal button {
-    width: 90%;
-    padding: 0.8rem;
-    font-size: 1rem;
-  }
-}
-
-
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-  h3 {
-    font-size: 1.3rem;
-  }
-
-  .header-container {
-    height: 120px;
-  }
-
-  .language-ch-container {
-    width: 15%;
-    left: 5%;
-    top: 60px;
-    height: auto;
-  }
-
-  .language-ch-container select {
-    width: 100%;
-    font-size: 0.95rem;
-  }
-
-  .start-button-container button {
-    width: 80%;
-    font-size: 1.1rem;
-  }
-
-  .timer-container {
-    width: 110px;
-    height: 55px;
-    top: -120px;
-    left: 15%;
-  }
-
-  .timer-container p {
-    font-size: 1.9rem;
-  }
-
-  .typing-area {
-    width: 80%;
-    height: 400px;
-    font-size: 13px;
-  }
-
-  .reset-button-container {
-    left: 70%;
-    top: -50px;
-  }
-
-  .modal {
-    width: 85%;
-    padding: 18px;
-    font-size: 1.1rem;
-  }
-
-  .modal button {
-    width: 80%;
-    padding: 1rem;
-    font-size: 1.1rem;
-  }
-}
-
-@media screen and (min-width: 1024px) and (max-width: 1500px) {
+@media screen and (min-width: 1020px) and (max-width: 1500px) {
   h3 {
     font-size: 1.4rem;
   }
@@ -342,19 +219,19 @@ svg {
   }
 
   .start-button-container button {
-    width: 250px;
+    width: 150px;
     font-size: 1.2rem;
   }
 
   .timer-container {
-    width: 120px;
-    height: 55px;
-    top: -135px;
+    width: 90px;
+    height: 35px;
+    top: -115px;
     left: 22%;
   }
 
   .timer-container p {
-    font-size: 2rem;
+    font-size: 1.6rem;
   }
 
   .typing-area {
@@ -364,8 +241,19 @@ svg {
   }
 
   .reset-button-container {
-    left: 62%;
-    top: -60px;
+    display: flex;
+      height: 40px;
+      width: 30px;
+      align-items: center;
+      justify-content: left;
+      position: relative;
+      left: 62%;
+      top: -60px;
+  }
+  .reset-button-container svg {
+    width: 1.1rem;
+    height: 1.1rem;
+    top: 1px;
   }
 
   .modal {
@@ -379,5 +267,18 @@ svg {
     width: 250px;
     padding: 1rem 1.3rem;
     font-size: 1.2rem;
+  }
+
+  .text-wrapper-2 {
+      margin: 0;
+      position: absolute;
+      bottom: -700px;
+      width: 88%;
+      display: grid;
+      grid-template-columns: 1fr 2fr 1fr;
+      padding: 2rem;
+      background: rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(10px);
+      gap: 2rem;
   }
 }
