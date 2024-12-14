@@ -32,6 +32,7 @@ export default function Typing() {
   const [currentSnippet, setCurrentSnippet] = useState(getRandomSnippet(language));
   
 const handleLanguageChange = (e) => {
+  if (testStarted) return;
   const selectedLanguage = e.target.value;
   setLanguage(selectedLanguage);
   setCurrentSnippet(getRandomSnippet(selectedLanguage));
@@ -147,7 +148,7 @@ const getColoredText = () => {
     <div>
         <Header />
         <Palm timer={1}/>
-        <LanguageSelector onChange={handleLanguageChange} />
+        <LanguageSelector onChange={handleLanguageChange} testStarted={testStarted} />
         <StartButton onClick={handleStartClick} />
         <ResetButton onReset={handleResetClick} />
         <Timer time={formatTime(timeLeft)} />
