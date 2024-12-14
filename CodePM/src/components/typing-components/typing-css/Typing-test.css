@@ -205,13 +205,13 @@ svg {
   }
 
   .header-container {
-    height: 150px;
+    height: 120px;
   }
 
   .language-ch-container {
     width: 10%;
     left: 22.6%;
-    top: 80px;
+    top: 70px;
   }
 
   .language-ch-container select {
@@ -223,10 +223,16 @@ svg {
     font-size: 1.2rem;
   }
 
+  .start-button-container {
+    position: relative;
+    top: -10px;
+
+  }
+
   .timer-container {
     width: 90px;
     height: 35px;
-    top: -115px;
+    top: -125px;
     left: 22%;
   }
 
@@ -248,7 +254,7 @@ svg {
       justify-content: left;
       position: relative;
       left: 62%;
-      top: -60px;
+      top: -68px;
   }
   .reset-button-container svg {
     width: 1.1rem;
@@ -272,7 +278,7 @@ svg {
   .text-wrapper-2 {
       margin: 0;
       position: absolute;
-      bottom: -700px;
+      bottom: -900px;
       width: 88%;
       display: grid;
       grid-template-columns: 1fr 2fr 1fr;
@@ -280,5 +286,9 @@ svg {
       background: rgba(0, 0, 0, 0.2);
       backdrop-filter: blur(10px);
       gap: 2rem;
+  }
+
+  body {
+    background-size: 280% 280%;
   }
 }
